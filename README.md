@@ -1,3 +1,3 @@
-# Sales 2023
+# Sales
 ## Introducción
-Este es el projecto de ejemplo de una carrito de compras
+Creación de proyecto universario.
