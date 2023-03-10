@@ -45,13 +45,23 @@
 
         var linkNextEnable = CurrentPage != TotalPages;
         var linkNextPage = CurrentPage + 1;
-        Links.Add(new PageModel
-            {
-                Text = "Siguiente",
-                Page = linkNextPage,
-                Enable = linkNextEnable
-            });
-
+        if (CurrentPage != TotalPages)
+        {
+            Links.Add(new PageModel
+                {
+                    Text = "Siguiente",
+                    Page = linkNextPage,
+                    Enable = linkNextEnable
+                });
+        }
+        else
+        {
+            Links.Add(new PageModel
+                {
+                    Text = "Siguiente",
+                    Enable = linkNextEnable
+                });
+        }
     }
 
     private async Task InternalSelectedPage(PageModel pageModel)
