@@ -13,7 +13,7 @@
 @code {
     [Parameter] public int CurrentPage { get; set; } = 1;
     [Parameter] public int TotalPages { get; set; }
-    [Parameter] public int Radio { get; set; } = 5;
+    [Parameter] public int Radio { get; set; } = 20;
     [Parameter] public EventCallback<int> SelectedPage { get; set; }
     List<PageModel> Links = new();
 
@@ -32,15 +32,16 @@
 
         for (int i = 1; i <= TotalPages; i++)
         {
-            if (TotalPages <= 10)
-            {
-                Links.Add(new PageModel
-                    {
-                        Page = i,
-                        Enable = CurrentPage == i,
-                        Text = $"{i}"
-                    });
-            }
+            //if (i >= CurrentPage - (Radio * i) && i <= CurrentPage + (Radio * i))
+             if (TotalPages <= (Radio * (i)) && TotalPages > (Radio * (i - 1)))
+                {
+                    Links.Add(new PageModel
+                        {
+                            Page = i,
+                            Enable = CurrentPage == i,
+                            Text = $"{i}",
+                        });
+                }
         }
 
         var linkNextEnable = CurrentPage != TotalPages;
