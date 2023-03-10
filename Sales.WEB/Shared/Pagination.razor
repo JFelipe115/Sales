@@ -32,7 +32,7 @@
 
         for (int i = 1; i <= TotalPages; i++)
         {
-            if (i >= CurrentPage - Radio && i <= CurrentPage + Radio)
+            if (TotalPages <= 10)
             {
                 Links.Add(new PageModel
                     {
