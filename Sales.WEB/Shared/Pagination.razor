@@ -32,8 +32,8 @@
 
         for (int i = 1; i <= TotalPages; i++)
         {
-            //if (i >= CurrentPage - (Radio * i) && i <= CurrentPage + (Radio * i))
-             if (TotalPages <= (Radio * (i)) && TotalPages > (Radio * (i - 1)))
+            if (i >= CurrentPage - (Radio * i) && i <= CurrentPage + (Radio * i))
+            //if (TotalPages <= (Radio * (i)) && TotalPages > (Radio * (i - 1)))
                 {
                     Links.Add(new PageModel
                         {
