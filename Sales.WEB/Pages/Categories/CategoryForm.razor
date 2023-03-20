@@ -1,7 +1,6 @@
 ﻿@inject SweetAlertService sweetAlertService
 <NavigationLock OnBeforeInternalNavigation="OnBeforeInternalNavigation" />
 
-
 <EditForm EditContext="editContex" OnValidSubmit="OnValidSubmit">
     <DataAnnotationsValidator />
 
@@ -14,13 +13,10 @@
     </div>
     <button class="btn btn-primary" type="submit">Guardar Cambios</button>
     <button class="btn btn-primary" @onclick="ReturnAction">Regresar</button>
-
 </EditForm>
 
 @code {
-
     private EditContext editContex = null!;
-
 
     [Parameter]
     [EditorRequired]
@@ -63,9 +59,6 @@
         {
             return;
         }
-
         context.PreventNavigation();
-
     }
-
 }

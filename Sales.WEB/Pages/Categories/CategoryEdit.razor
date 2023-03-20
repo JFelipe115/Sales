@@ -7,18 +7,15 @@
 
 @if (category is null)
 {
-    <p>Cargando...</p>
+    <div class="spinner" />
 }
 else
 {
     <CategoryForm @ref="categoryForm" Category="category" OnValidSubmit="EditAsync" ReturnAction="Return" />
 }
 
-
 @code {
-
     private CategoryForm? categoryForm;
-
     private Category? category;
 
     [Parameter]
@@ -33,17 +30,12 @@ else
             {
                 navigationManager.NavigateTo("/categories");
                 return;
-
             }
             var message = await responseHTTP.GetErrorMessageAsync();
             await sweetAlertSservice.FireAsync("Error", message, SweetAlertIcon.Error);
-
         }
-
         category = responseHTTP.Response;
-
     }
-
 
     private async Task EditAsync()
     {
@@ -56,6 +48,7 @@ else
         }
         Return();
     }
+
     private void Return()
     {
         categoryForm!.FormPostedSuccessFully = true;

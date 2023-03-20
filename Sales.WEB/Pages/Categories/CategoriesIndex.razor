@@ -18,10 +18,6 @@
     </div>
 </div>
 
-
-
-
-
 <Pagination CurrentPage="currentPage"
             TotalPages="totalPages"
             SelectedPage="SelectedPageAsync" />
@@ -56,9 +52,6 @@
     </Body>
 </GenericList>
 
-
-
-
 @code {
     public List<Category>? categories { get; set; }
 
@@ -81,10 +74,6 @@
 
     private async Task LoadAsync(int page = 1)
     {
-
-
-
-
         if (!string.IsNullOrWhiteSpace(Page))
         {
             page = Convert.ToInt32(Page);
@@ -104,14 +93,11 @@
             url2 = $"api/categories/totalPages?filter={Filter}";
         }
 
-
         var responseHppt1 = await repository.Get<List<Category>>(url1);
         var responseHppt2 = await repository.Get<int>(url2);
 
         categories = responseHppt1.Response;
         totalPages = responseHppt2.Response;
-
-
     }
 
     private async Task DeleteAsync(int id)
@@ -124,7 +110,6 @@
                 ShowCancelButton = true,
                 ConfirmButtonText = "Si",
                 CancelButtonText = "No"
-
             });
         var confirm = string.IsNullOrEmpty(result.Value);
         if (confirm)
@@ -142,10 +127,9 @@
                 return;
             }
         }
-
         await LoadAsync();
-
     }
+
     private async Task SelectedPageAsync(int page)
     {
         currentPage = page;
