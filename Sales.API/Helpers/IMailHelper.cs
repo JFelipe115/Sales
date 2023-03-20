@@ -4,9 +4,6 @@ namespace Sales.API.Helpers
 {
     public interface IMailHelper
     {
-        public interface IMailHelper
-        {
-            Response SendMail(string toName, string toEmail, string subject, string body);
-        }
+        Response SendMail(string toName, string toEmail, string subject, string body);
     }
 }
