@@ -27,7 +27,6 @@ namespace Sales.API.Data
             await CheckCategoriesAsync();
             await CheckRolesAsync();
             await CheckUserAsync("1010", "Juan", "Zuluaga", "zulu@yopmail.com", "322 311 4620", "Calle Luna Calle Sol", UserType.Admin);
-
         }
 
         private async Task CheckCategoriesAsync()
@@ -64,7 +63,6 @@ namespace Sales.API.Data
             var user = await _userHelper.GetUserAsync(email);
             if (user == null)
             {
-
                 var city = await _context.Cities.FirstOrDefaultAsync(x => x.Name == "Medellín");
                 if (city == null)
                 {
@@ -104,7 +102,7 @@ namespace Sales.API.Data
                     List<CountryResponse> countries = (List<CountryResponse>)responseCountries.Result!;
                     foreach (CountryResponse countryResponse in countries)
                     {
-                        Country country = await _context.Countries!.FirstOrDefaultAsync(c => c.Name == countryResponse.Name!)!;
+                        Country? country = await _context.Countries!.FirstOrDefaultAsync(c => c.Name == countryResponse.Name!)!;
                         if (country == null)
                         {
                             country = new() { Name = countryResponse.Name!, States = new List<State>() };
