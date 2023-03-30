@@ -28,12 +28,12 @@ namespace Sales.API.Data
             await CheckCountriesAsync();
             await CheckCategoriesAsync();
             await CheckRolesAsync();
-            //await CheckUserAsync("1010", "Juan", "Zuluaga", "zulu@yopmail.com", "322 311 4620", "Calle Luna Calle Sol", "JuanZuluaga.jpeg", UserType.Admin);
-            //await CheckUserAsync("2020", "Felipe", "Chaves", "jfelipe@yopmail.com", "322 311 4620", "Calle Luna Calle Sol", "jfelipe.jpeg", UserType.User);
-            //await CheckUserAsync("3030", "Alejandra", "Posada", "alejita@yopmail.com", "322 311 4620", "Calle Luna Calle Sol", "alejita.jpg", UserType.User);
-            //await CheckUserAsync("4040", "Michael", "Jackson", "michael@yopmail.com", "322 311 4620", "Calle Luna Calle Sol", "michael.jpg", UserType.User);
-            //await CheckUserAsync("5050", "Bob", "Marley", "bob@yopmail.com", "322 311 4620", "Calle Luna Calle Sol", "bob.jpg", UserType.User);
-            //await CheckProductsAsync();
+            await CheckUserAsync("1010", "Juan", "Zuluaga", "zulu@yopmail.com", "322 311 4620", "Calle Luna Calle Sol", "JuanZuluaga.jpeg", UserType.Admin);
+            await CheckUserAsync("2020", "Ledys", "Bedoya", "ledys@yopmail.com", "322 311 4620", "Calle Luna Calle Sol", "LedysBedoya.jpeg", UserType.User);
+            await CheckUserAsync("3030", "Brad", "Pitt", "brad@yopmail.com", "322 311 4620", "Calle Luna Calle Sol", "Brad.jpg", UserType.User);
+            await CheckUserAsync("4040", "Angelina", "Jolie", "angelina@yopmail.com", "322 311 4620", "Calle Luna Calle Sol", "Angelina.jpg", UserType.User);
+            await CheckUserAsync("5050", "Bob", "Marley", "bob@yopmail.com", "322 311 4620", "Calle Luna Calle Sol", "bob.jpg", UserType.User);
+            await CheckProductsAsync();
         }
 
         private async Task CheckProductsAsync()
