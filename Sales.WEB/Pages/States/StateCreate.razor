@@ -20,7 +20,6 @@
 
     private async Task CreateAsync()
     {
-
         state.CountryId = CountryId;
         var httpResponse = await repository.Post("/api/states", state);
         if (httpResponse.Error)
